@@ -4,7 +4,7 @@
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Klantnummer...">
             <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">Vind</button>
+        <button class="btn btn-secondary" ng-click="zoekKlant()" type="button">Vind</button>
       </span>
         </div>
     </div>
@@ -16,4 +16,36 @@
       </span>
         </div>
     </div>
+</div>
+<div class="form-wrapper" ng-hide="niettonen">
+  <div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Klantcode</label>
+    <div class="col-10">
+      <input class="form-control" type="text" value="B123123" id="example-text-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-search-input" class="col-2 col-form-label">Klantnaam</label>
+    <div class="col-10">
+      <input class="form-control" type="search" value="Restaurant A" id="example-search-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Contactpersoon</label>
+    <div class="col-10">
+      <input class="form-control" type="email" value="Dhr persoon" id="example-email-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-url-input" class="col-2 col-form-label">Wasprogramma</label>
+    <div class="col-10">
+      <input class="form-control" type="url" value="wasbeurt 1" id="example-url-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-tel-input" class="col-2 col-form-label">Telefoon</label>
+    <div class="col-10">
+      <input class="form-control" type="tel" value="0546-622433" id="example-tel-input">
+    </div>
+  </div>
 </div>
