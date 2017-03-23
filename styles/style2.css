@@ -1,3 +1,19 @@
+
+/*********************
+MAIN PAGE
+*********************/
+#content {
+  margin-top: 1.5em; }
+
+.slider {
+  margin-bottom: 30px; }
+
+.image-slider {
+  max-height: 400px; }
+  .image-slider img {
+    width: 100%; }
+
+
 body {
   font: 18px/20px 'raleway', Helvetica, Arial, sans-serif;
   color: white;

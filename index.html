@@ -36,8 +36,9 @@
 		<!-- build:css css/style.min.css -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="bower_components/OwlCarousel/owl-carousel/owl.carousel.css" />
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />
-			<link rel="stylesheet" type="text/css" href="styles/style2.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.css" />		
+		<link rel="stylesheet" type="text/css" href="styles/style2.css" />
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<!-- endbuild -->
 	</head>
@@ -63,8 +64,13 @@
 
 	<!-- Non-angular libraries -->
 	<!-- build:libs js/libs.js -->
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/nonangular/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js"></script>
 	<!-- endbuild -->
@@ -90,6 +96,7 @@
 	<script type="text/javascript" src="app/factory.js"></script>
 	<script type="text/javascript" src="app/controller.js"></script>
 	<script type="text/javascript" src="app/mangelController.js"></script>
+	<script type="text/javascript" src="app/managementController.js"></script>
 	<!-- endbuild -->
 
 	<!-- templates from $templateCache -->

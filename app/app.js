@@ -57,7 +57,12 @@
       .when('/choice', {
         templateUrl: 'views/choice.html',
         controller: 'MainController',
-        controllerAs: 'main'
+        controllerAs: 'choice'
+      })
+      .when('/management', {
+        templateUrl: 'views/management.html',
+        controller: 'managementController',
+        controllerAs: 'management'
       })
       .otherwise({
         redirectTo: '/'

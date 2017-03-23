@@ -24,6 +24,10 @@
       console.log($location)
       $location.path('/main/' + mangel)
     }
+
+    $scope.goManagement = function(){
+      $location.path('/management');
+    }
    
     $scope.login= function(){
       console.log($scope.user, $scope.password)
