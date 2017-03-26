@@ -25,7 +25,6 @@
         $scope.program.selectedMangel = item; 
     }
     $scope.saveProgram = function(){
-      console.log($scope.program)
       datum2 = new Date($scope.program.date)
       if($scope.program.date != undefined && $scope.program.selectedMangel != undefined && $scope.program.customercode  != undefined && $scope.program.customername  != undefined && $scope.program.washprogram  != undefined){
         $scope.errorMessage = "";
@@ -45,6 +44,12 @@
         }
         firebase.database().ref('programs/' + datum2.toString('dd-MM-yyyy') + "/" + $scope.program.selectedMangel).push(washingProgram);
         var customerRef = firebase.database().ref('customers/' + $scope.program.customercode).update(customer);
+        $scope.program.selectedMangel = null;
+        $scope.program.customercode = undefined;
+        $scope.program.customername = undefined;
+        $scope.program.washprogram = undefined;
+        $scope.program.contactPerson = "";
+        $scope.program.info ="";
       }
       else{      $scope.errorMessage = "U heeft niet alle verplichte velden ingevuld"}
 

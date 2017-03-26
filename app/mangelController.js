@@ -13,34 +13,23 @@
     $scope.tonen = false;
     $scope.niettonen = true;
     $scope.wassie = [];
+    $scope.data = [];
     //$scope.wasprogrammas = [];
     var self = this;
     var today = new Date();
     $scope.mangel = $routeParams.id;
-    console.log($scope.mangel)
-
+     $scope.$watch('wassie', function() {
+        alert('hey, myVar has changed!');
+    });
     //firebase request to get programs of date
-    function getWashPrograms(date){
-    var programmas;
-    var programRef = firebase.database().ref('programs/' + date.toString('dd-MM-yyyy') + '/');
+    var programRef = firebase.database().ref('programs/' + today.toString('dd-MM-yyyy') + '/');
       programRef.child('/Mangel ' + $scope.mangel).once('value').then(function(snapshot) {
-      //array met micro's en macro's ophalen en binden aan menu
-      programmas = snapshot.val();
-      }).then(function(result){
-        console.log('test',programmas.length)
-          if(programmas !== null){
-              for(var i = 0; i < programmas.length; i++){
-                console.log('pussie', programmas[i])
-                  $scope.wassie.push(programmas[i])
-              }
-          }
-          console.log('wassie',$scope.wassie)
+      snapshot.forEach(function(userSnapshot) {
+        $scope.wassie.push(userSnapshot.val())
       })
-    }
-    $scope.wasprogrammas = getWashPrograms(today)
-    //console.log($scope.wasprogrammas)
-
-
+      $scope.data = $scope.wassie;
+      $scope.$applyAsync();
+    })
     console.log($scope.wasprogrammas)
     $scope.zoekKlant = function(){
       $scope.tonen = true;
