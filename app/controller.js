@@ -15,10 +15,23 @@
 
 
   function MainController(LocalStorage, QueryService, $scope, $location, $routeParams) {
-
+    $scope.showAdmin = false;
     // 'controller as' syntax
     var self = this;
-
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        if(user.email === "rolf@engelbertink.nl")
+        {
+          $scope.showAdmin = true;
+          $scope.$applyAsync();
+        }
+      } 
+      else {
+        console.log('uitgelogd')
+        $location.path('');
+        $scope.$applyAsync(); 
+      }
+    });
     $scope.goMangel = function(mangel){
       $location.path('/main/' + mangel)
     }
@@ -26,9 +39,11 @@
     $scope.goManagement = function(){
       $location.path('/management');
     }
+    $scope.logOut = function(){
+    firebase.auth().signOut();
+    };
    
     $scope.login= function(){
-      console.log($scope.user, $scope.password)
       firebase.auth().signInWithEmailAndPassword($scope.user, $scope.password).catch(function(error) {
           var errorCode = error.code;
           var errorMessage = error.message;

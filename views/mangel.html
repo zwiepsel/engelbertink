@@ -1,31 +1,36 @@
 <h2>Wasserij - mangel {{mangel}}</h2>
 
 <div class="form-wrapper" ng-hide="niettonen">
-  </div>
   <div class="form-group row">
     <label for="example-text-input" class="col-2 col-form-label">Klantcode - Klantnaam</label>
     <div class="col-10">
-      <select class="col-10" ng-model="wassie.customercode">
-      <option  ng-repeat="x in wassie" ng-value="wassie.customerCode">{{x.customerCode}} - {{x.customerName}}</option>
+      <select class="col-10 program"  ng-click="getCustomerCode(wassie)" ng-model="index">
+      <option ng-repeat="x in wassie track by $index" ng-value="$index">{{x.customerCode}}</option>
       </select>
     </div>
   </div>
+
   <div class="form-group row">
     <label for="example-email-input"  class="col-2 col-form-label">Contactpersoon</label>
     <div class="col-10">
-      <input class="form-control" ng-model="wassie.contactPerson" type="text" >
+      <input class="form-control" ng-model="data.contactPerson" type="text" >
     </div>
   </div>
   <div class="form-group row">
     <label for="example-url-input" class="col-2 col-form-label">Wasprogramma</label>
     <div class="col-10">
-      <input class="form-control"  ng-model="wassie.washProgram" type="url" value="wasbeurt 1" id="example-url-input">
+      <input class="form-control"  ng-model="data.washProgram" type="url" value="wasbeurt 1" id="example-url-input">
     </div>
   </div>
   <div class="form-group row">
     <label for="example-info-input"  class="col-2 col-form-label">Extra informatie</label>
     <div class="col-10">
-      <textarea class="form-control" ng-model="wassie.extraInfo"  rows="5" id="example-tel-input"></textarea>
+      <textarea class="form-control" ng-model="data.extraInfo"  rows="5" id="example-tel-input"></textarea>
+    </div>
+    <div style="margin-top:20px;">
+              <button class="btn btn-primary" ng-click="goBack()" style="float:left;" type="button">Terug</button>
+          <button class="btn btn-secondary" ng-click="closeProgram()" style="margin-left:20%;" type="button">Afgerond</button>
     </div>
   </div>
+
 </div>
