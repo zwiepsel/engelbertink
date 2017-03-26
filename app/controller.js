@@ -20,8 +20,6 @@
     var self = this;
 
     $scope.goMangel = function(mangel){
-      console.log(mangel)
-      console.log($location)
       $location.path('/main/' + mangel)
     }
 
